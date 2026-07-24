@@ -1,43 +1,24 @@
-# FuelPHP
+# タスク管理アプリ（FuelPHP）
 
-* Version: 1.8.2
-* [Website](https://fuelphp.com/)
-* [Release Documentation](https://fuelphp.com/docs)
-* [Release API browser](https://fuelphp.com/api)
-* [Development branch Documentation](https://fuelphp.com/dev-docs)
-* [Development branch API browser](https://fuelphp.com/dev-api)
-* [Support Forum](https://forums.fuelphp.com) for comments, discussion and community support
+FuelPHP 1.8.2 で作成した CRUD 機能を持つタスク管理アプリケーション。
 
-## Description
+## 主な機能
+- タスクの追加・一覧・編集・削除（CRUD）
+- サブタスク管理（task と 1:n 関係）
+- タグによる絞り込み（Session 使用）
+- 表示モード切替：全件／未完了／完了（Cookie 使用）
+- 完了チェック・サブタスク操作を Ajax で非同期更新（Knockout.js）
 
-FuelPHP is a fast, lightweight PHP 5.4+ framework. In an age where frameworks are a dime a dozen, we believe that FuelPHP will stand out in the crowd. It will do this by combining all the things you love about the great frameworks out there, while getting rid of the bad.
-
-FuelPHP is fully PHP 7.3 compatible.
-
-## More information
-
-For more detailed information, see the [development wiki](https://github.com/fuelphp/fuelphp/wiki).
-
-## Development Team
-
-* Harro Verton - Project Manager, Developer ([http://wanwizard.eu/](http://wanwizard.eu/))
-* Emlyn West - Core Developer, ORM
-
-### Want to join?
-
-The FuelPHP development team is always looking for new team members, who are willing to help lift the framework to the next level, and have the commitment to not only produce awesome code, but also great documentation, and support to our users.
-
-You can not apply for membership. Start by sending in pull-requests, work on outstanding feature requests or bugs, and become active in the #fuelphp IRC channel. If your skills are up to scratch, we will notice you, and will ask you to become a team member.
-
-### Alumni
-
-* Márk Sági-Kazár - Developer
-* Frank de Jonge - Developer ([http://frenky.net/](http://frenky.net/))
-* Jelmer Schreuder - Developer ([http://jelmerschreuder.nl/](http://jelmerschreuder.nl/))
-* Phil Sturgeon - Developer ([http://philsturgeon.co.uk](http://philsturgeon.co.uk))
-* Dan Horrigan - Founder, Developer ([http://dhorrigan.com](http://dhorrigan.com))
+## 技術要素
+- サーバサイド：PHP / FuelPHP 1.8.2
+- フロントエンド：Knockout.js（非同期 UI）
+- データベース：MySQL（MariaDB）
+- セキュリティ対策：XSS（htmlspecialchars）、CSRF（Form::csrf）、SQLインジェクション（DBクラスのプレースホルダ）
 
 ## テーブル構成
 - task（タスク）
 - sub_task（サブタスク：task と 1:n 関係）
 - tag（タグ）
+
+## 開発フロー
+develop ブランチで開発し、Pull Request 経由で main にマージしています。
