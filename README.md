@@ -15,8 +15,10 @@ FuelPHP 1.8.2 で作成した CRUD 機能を持つタスク管理アプリケー
 - データベース：MySQL（MariaDB）
 - セキュリティ対策：XSS（htmlspecialchars）、CSRF（Form::csrf）、SQLインジェクション（DBクラスのプレースホルダ）
 
-## セットアップ
-1. `sql/create_tables.sql` を実行してテーブルを作成
-2. `fuel/app/config/development/db.php` の接続情報を環境に合わせる
-3. `php oil server` または `php -S localhost:8000 -t public` で起動
-4. ブラウザで `http://localhost:8000` にアクセス
+## テーブル構成
+- task（タスク）
+- sub_task（サブタスク：task と 1:n 関係）
+- tag（タグ）
+
+## 開発フロー
+develop ブランチで開発し、Pull Request 経由で main にマージしています。
